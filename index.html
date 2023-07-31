@@ -447,16 +447,24 @@ function toggleContent(contentId) {
       }
     }
   }
+let previousContentId = null;
+
 function showContent(contentId) {
-  const allContents = document.getElementsByClassName('content');
-  for (let i = 0; i < allContents.length; i++) {
-    const content = allContents[i];
-    if (content.id === contentId) {
-      content.classList.toggle('show');
-    } else {
-      content.classList.remove('show');
+  const content = document.getElementById(contentId);
+  const previousContent = document.getElementById(previousContentId);
+  
+  if (content.classList.contains('show')) {
+    // If the clicked content is already showing, hide it
+    content.classList.remove('show');
+  } else {
+    // If the clicked content is not showing, show it and hide the previous one
+    content.classList.add('show');
+    if (previousContent) {
+      previousContent.classList.remove('show');
     }
   }
+
+  previousContentId = content.classList.contains('show') ? contentId : null;
 }
 
 </script>
