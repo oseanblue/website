@@ -447,11 +447,17 @@ function toggleContent(contentId) {
       }
     }
   }
-  function showContent(contentId) {
-    const content = document.getElementById(contentId);
-    content.classList.add('show');
+function showContent(contentId) {
+  const allContents = document.getElementsByClassName('content');
+  for (let i = 0; i < allContents.length; i++) {
+    const content = allContents[i];
+    if (content.id === contentId) {
+      content.classList.add('show');
+    } else {
+      content.classList.remove('show');
+    }
   }
-
+}
 </script>
 </body>
 </html>
