@@ -260,6 +260,74 @@ h2 {
 }
 
 
+    
+/* Contact Section */
+#contact-section {
+  display: none;
+  margin-top: 20px;
+}
+
+#contact-section.show {
+  display: block;
+}
+
+.contact-box {
+  border: 2px solid #6c4b26; /* Brown border */
+  background-color: rgba(108, 75, 38, 0.5); /* Transparent brown background */
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-box form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.contact-box label {
+  color: #fff;
+  font-size: 18px;
+}
+
+.contact-box input[type="text"],
+.contact-box input[type="email"],
+.contact-box button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-box input[type="text"],
+.contact-box input[type="email"] {
+  background-color: rgba(255, 255, 255, 0.5); /* Transparent white background */
+}
+
+.contact-box button {
+  background-color: #073024;
+  color: burlywood;
+  cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .contact-box {
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .contact-box form {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 
 
 
@@ -404,6 +472,26 @@ h2 {
       <h4>Government Project</h4>
       <p>1</p>
     </div>
+  </div>
+</section>
+
+
+
+  <!-- Contact Section (Initially hidden) -->
+<section class="content text-center" id="contact-section">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <form name="contact" netlify>
+      <p>
+        <label>Name <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Email <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
   </div>
 </section>
 
