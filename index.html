@@ -452,12 +452,13 @@ function showContent(contentId) {
   for (let i = 0; i < allContents.length; i++) {
     const content = allContents[i];
     if (content.id === contentId) {
-      content.classList.add('show');
+      content.classList.toggle('show');
     } else {
       content.classList.remove('show');
     }
   }
 }
+
 </script>
 </body>
 </html>
